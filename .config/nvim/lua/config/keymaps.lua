@@ -18,15 +18,27 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
 -- Buffers
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" })
-map("n", "<leader>bd", 
-function()
-local bd = require("mini.bufremove").delete
-  if not bd(0, false) then
-    return
-  end
-end
-, { desc = "Delete buffer" })
+map("n", "<leader>bd", function()
+	local bd = require("mini.bufremove").delete
+	if not bd(0, false) then
+		return
+	end
+end, { desc = "Delete buffer" })
 map("n", "<leader>bb", "<cmd>e #<CR>", { desc = "Alternate buffer" })
+map("n", "<leader>bo", function()
+	local current_buf = vim.api.nvim_get_current_buf()
+	local all_bufs = vim.api.nvim_list_bufs()
+
+	for _, buf in ipairs(all_bufs) do
+		if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+			local buftype = vim.bo[buf].buftype
+
+			if buftype == "" then
+				require("mini.bufremove").delete(buf, false)
+			end
+		end
+	end
+end, { desc = "Close other buffers (mini.bufremove)" })
 
 -- Editing
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
