@@ -25,6 +25,7 @@ alias tl="tmux ls"
 alias tk="tmux kill-session -t"
 alias ls="eza --icons --group-directories-first"
 alias ll="eza -lbF --git --icons --group-directories-first"
+alias cd="z"
 
 path+=(
 $HOME/.local/bin
