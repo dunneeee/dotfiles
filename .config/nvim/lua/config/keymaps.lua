@@ -40,6 +40,15 @@ map("n", "<leader>bo", function()
 	end
 end, { desc = "Close other buffers (mini.bufremove)" })
 
+map("n", "<leader>-", "<cmd>split<CR>", { desc = "Horizontal split" })
+map("n", "<leader>\\", "<cmd>vsplit<CR>", { desc = "Vertical split" })
+map("n", "<leader>=", "<C-w>=", { desc = "Equalize window sizes" })
+
+map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
+
 -- Editing
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })

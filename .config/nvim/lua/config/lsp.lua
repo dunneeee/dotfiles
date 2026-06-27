@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("n", "gt", vim.lsp.buf.type_definition, "Go to type definition")
 		map("n", "gr", vim.lsp.buf.references, "References")
 		map("n", "K", vim.lsp.buf.hover, "Hover doc")
-		map("n", "<C-k>", vim.lsp.buf.signature_help, "Signature help")
+		map("i", "<C-k>", vim.lsp.buf.signature_help, "Signature help")
 		map("n", "<leader>cr", vim.lsp.buf.rename, "Rename symbol")
 		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
 
