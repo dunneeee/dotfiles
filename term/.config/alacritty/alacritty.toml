@@ -15,14 +15,14 @@ decorations = "Full"
 size = 12.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "Cascadia Mono NF"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
-style = "Bold"
+family = "Cascadia Mono NF"
+style = "SemiBold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "Cascadia Mono NF"
 style = "Italic"
 
 [scrolling]
